@@ -82,8 +82,8 @@ for vector in vectors:
 	sims = index[vector] # perform a similarity query against the corpus
 	coords.append(sims)
 	print(list(enumerate(sims))) # print (document_number, document_similarity) 2-tuples
-
 print(coords)
+
 # 3d plotting
 fig = plt.figure()
 ax = plt.axes(projection='3d')
