@@ -5,10 +5,8 @@ using System.IO;
 
 public class ForestGenerator : MonoBehaviour
 {
-    public Rigidbody tree;
-    public Transform treePos;
-    public ArrayList treeLocations = new ArrayList();
-    public List<Vector3> xyz = new List<Vector3>();
+    private ArrayList treeLocations = new ArrayList();
+    private List<Vector3> xyz = new List<Vector3>();
     // Start is called before the first frame update
     void Start()
     {
