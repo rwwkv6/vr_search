@@ -4,7 +4,20 @@
 </head>
 
 <a-scene>
-  <a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+  <a-assets>
+    <img id="boxTexture" src="textures/wood.png">
+  </a-assets>
+
+  <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="1 1 1">
+    <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000"
+      repeat="indefinite"></a-animation>
+  </a-box>
+
+
+  <a-camera>
+    <a-cursor></a-cursor>
+  </a-camera>
+
 
   <!-- Out of the box environment! -->
   <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
