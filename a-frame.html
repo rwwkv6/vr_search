@@ -1,5 +1,7 @@
 <head>
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
 </head>
 
@@ -13,8 +15,12 @@
       repeat="indefinite"></a-animation>
   </a-box>
 
-<a-entity oculus-touch-controls="hand: left"></a-entity>
-<a-entity oculus-touch-controls="hand: right"></a-entity>
+<!-- <a-entity oculus-touch-controls="hand: left"></a-entity>
+<a-entity oculus-touch-controls="hand: right"></a-entity> -->
+  <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
+  <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
+
+  <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0 -1"></a-box>
 
   <!-- Out of the box environment! -->
   <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
