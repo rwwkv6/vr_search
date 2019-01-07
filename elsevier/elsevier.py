@@ -37,28 +37,28 @@ client = ElsClient(config['apikey'])
 
 ## Scopus (Abtract) document example
 # Initialize document with Scopus ID.
-scp_doc = AbsDoc(scp_id = '84872135457')
-if scp_doc.read(client):
-    print ("scp_doc.title: ", scp_doc.title)
-    scp_doc.write()   
-else:
-    print ("Read document failed.")
+# scp_doc = AbsDoc(scp_id = '84872135457')
+# if scp_doc.read(client):
+#     print ("scp_doc.title: ", scp_doc.title)
+#     scp_doc.write()   
+# else:
+#     print ("Read document failed.")
 
-## ScienceDirect (full-text) document example using PII
-pii_doc = FullDoc(sd_pii = 'S1674927814000082')
-if pii_doc.read(client):
-    print ("pii_doc.title: ", pii_doc.title)
-    pii_doc.write()   
-else:
-    print ("Read document failed.")
+# ## ScienceDirect (full-text) document example using PII
+# pii_doc = FullDoc(sd_pii = 'S1674927814000082')
+# if pii_doc.read(client):
+#     print ("pii_doc.title: ", pii_doc.title)
+#     pii_doc.write()   
+# else:
+#     print ("Read document failed.")
 
-## ScienceDirect (full-text) document example using DOI
-doi_doc = FullDoc(doi = '10.1016/S1525-1578(10)60571-5')
-if doi_doc.read(client):
-    print ("doi_doc.title: ", doi_doc.title)
-    doi_doc.write()   
-else:
-    print ("Read document failed.")
+# ## ScienceDirect (full-text) document example using DOI
+# doi_doc = FullDoc(doi = '10.1016/S1525-1578(10)60571-5')
+# if doi_doc.read(client):
+#     print ("doi_doc.title: ", doi_doc.title)
+#     doi_doc.write()   
+# else:
+#     print ("Read document failed.")
 
 
 ## Load list of documents from the API into affilation and author objects.
@@ -94,6 +94,10 @@ else:
 # print ("aff_srch has", len(aff_srch.results), "results.")
 
 ## Initialize doc search object and execute search, retrieving all results
-doc_srch = ElsSearch('star+trek+vs+star+wars','scopus')
-doc_srch.execute(client, get_all = True)
+doc_srch = ElsSearch('virtual reality','scopus')
+print('searching...')
+doc_srch.execute(client, get_all = False)
 print ("doc_srch has", len(doc_srch.results), "results.")
+
+# for doc in doc_srch.results:
+# 	print(doc)
