@@ -21,16 +21,12 @@
 
   <a-box hoverable grabbable stretchable draggable dropppable color="blue" position="0 0 -1"></a-box>
 
-  <a-entity id="rig"
-          movement-controls
-          position="0 0 0">
-  <a-entity camera
-            position="0 1.6 0"
-            look-controls="pointerLockEnabled: true"></a-entity>
-  <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
-  <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
-</a-entity>
-
+  <a-entity id="rig" movement-controls position="0 0 0 ">
+    <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"></a-entity>
+    <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
+    <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
+  </a-entity>
+  <!-- <a-grid></a-grid>   -->
   <!-- Out of the box environment! -->
   <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
 </a-scene>
