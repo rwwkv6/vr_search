@@ -5,7 +5,6 @@ from elsapy.elsprofile import ElsAuthor, ElsAffil
 from elsapy.elsdoc import FullDoc, AbsDoc
 from elsapy.elssearch import ElsSearch
 import json
-from tqdm import tqdm
     
 ## Load configuration
 con_file = open("config.json")
@@ -97,8 +96,8 @@ client = ElsClient(config['apikey'])
 ## Initialize doc search object and execute search, retrieving all results
 doc_srch = ElsSearch('virtual reality','scopus')
 print('searching...')
-doc_srch.execute(client, get_all = True)
+doc_srch.execute(client, get_all = False)
 print ("doc_srch has", len(doc_srch.results), "results.")
 
-for doc in doc_srch.results:
+for doc in tqdm(doc_srch.results):
 	print(doc)
