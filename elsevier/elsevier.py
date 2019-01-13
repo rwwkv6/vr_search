@@ -96,7 +96,7 @@ client = ElsClient(config['apikey'])
 ## Initialize doc search object and execute search, retrieving all results
 doc_srch = ElsSearch('virtual reality','scopus')
 print('searching...')
-doc_srch.execute(client, get_all = False)
+doc_srch.execute(client, get_all=False)
 print ("doc_srch has", len(doc_srch.results), "results.")
 
 for doc in doc_srch.results:
