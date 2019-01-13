@@ -99,5 +99,5 @@ print('searching...')
 doc_srch.execute(client, get_all = False)
 print ("doc_srch has", len(doc_srch.results), "results.")
 
-for doc in tqdm(doc_srch.results):
+for doc in doc_srch.results:
 	print(doc)
